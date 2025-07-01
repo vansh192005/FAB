@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/5df5ba9f64.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="home.css" />
+  <title>FAB Find A Buddy</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <!-- Header -->
+      <nav>
+        <!--Logo  -->
+        <div class="logo-container">
+          <img src="FAB(1).png" alt="logo" id="logo">
+          <p id="tagline">Find A Buddy</p>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          &#9776; <!-- This is the ☰ icon -->
+        </div>
+
+        <!-- Navbar -->
+        <div class="middle">
+          <div class="navbar">
+            <ul class="menu">
+              <li class="menu-item">
+                <a href="#">Menu</a>
+                <ul class="submenu">
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="event-2.html">Post Event</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- <a href="Blog">Blog</a> -->
+        </div>
+        <!-- Registration -->
+        <div class="right">
+          <!-- <p>Right</p> -->
+          <button>
+            <p><a href="signup.html">JOIN FAB</a></p>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Image section -->
+      <header>
+        <div class="center_img">
+          <div class="text">
+            <h2>
+              <span id="dynamicText">Travel</span> Together,
+            </h2>
+            <h2>Share Journey & Fun</h2>
+          </div>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Start Exploring...">
+            <button>Search</button>
+          </div>
+          <p>Plan. Connect. Travel. Repeat.</p>
+      </header>
+    </div>
+
+    <!-- Change Text Effect Script -->
+
+    <script>
+      const words = ["Plan", "Connect", "Explore"];
+      let index = 0;
+
+      function changeText() {
+        const dynamicText = document.getElementById("dynamicText");
+        dynamicText.textContent = words[index];
+        index = (index + 1) % words.length;
+      }
+
+      setInterval(changeText, 2000); // Change text every 2 seconds
+    </script>
+
+    <!-- How FAB Works -->
+    <section>
+      <h1 class="heading">How FAB Works</h1>
+
+      <div class="categories">
+
+        <div id="category1">
+          <img src="search.png" alt="search">
+          <p>Search Destination</p>
+          <p class="para">Start your travel journey by <br>picking a destination.</p>
+        </div>
+
+        <div id="category2">
+          <img src="airplane-facing-left.png" alt="travel">
+          <p>Find Travel Partners</p>
+          <p class="para">Connect with like-minded travelers <br> in your area.</p>
+        </div>
+
+        <div id="category3">
+          <img src="social-media.png" alt="connecting">
+          <p>Get Connected</p>
+          <p class="para">Clicked connect – let’s chat <br>and plan a meetup!</p>
+        </div>
+
+        <div id="category4">
+          <img src="crowd-of-users.png" alt="group">
+          <p>Trip Together</p>
+          <p class="para">Let’s plan, meet up at a public spot, <br>and explore together!</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Image Section -->
+
+    <section>
+      <!-- Image Section 1 -->
+      <div class="image1">
+        <div class="info">
+          <h3>Real and Verified Travelers Only!</h3>
+          <p>FAB connects 150,000 passionate travelers from all around the globe.
+            Everyone on board is ID checked and verified. Travel safe, comfortable, and fun.</p>
+        </div>
+        <img src="friends_trip.jpg" alt="Friends trip" id="img1">
+      </div>
+      <!-- Image Section 2 -->
+      <div class="image2">
+        <img src="friends_trip2.jpg" alt="Friends trip" id="img2">
+        <div class="info2">
+          <h3>Travel with the Perfect Clique</h3>
+          <p>Explore 7,000 destinations around the globe with the perfect travel buddy by joining tailor-made trips.
+            Everything is planned and hosted by an experienced travel buddy, called TripLeader.
+            All you need to do is sit down, relax, and have a lot of fun with new travel buddies!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Join FAB -->
+
+    <section id="join">
+      <h1 class="heading">Why Join FAB</h1>
+
+      <div class="reasons">
+
+        <div id="reason1">
+          <img src="gift.png" alt="gift">
+          <p class="p1">Memorably Unqiue</p>
+          <p class="desc">Our TripLeaders have a magic touch to <br> make each trip special! Explore <br> extraordinary
+            destinations,
+            walk off-the- <br>beaten-path, and experience unique <br>itineraries</p>
+        </div>
+
+        <div id="reason2">
+          <img src="star.png" alt="star">
+          <p class="p1">Incredibly Authentic</p>
+          <p class="desc">Find like-minded travel buddies and <br> discover an authentic and exciting new <br> way of
+            traveling</p>
+        </div>
+
+        <div id="reason3">
+          <img src="time.png" alt="time">
+          <p class="p1">24/4 Support</p>
+          <p class="desc">We provide round-the-clock support and <br> assistance to ensure that your travel <br>
+            experience exceeds your expectations</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!--Reviews -->
+
+    <section class="feedback">
+      <h1 class="heading">What FAB Users Are Saying</h1>
+      <div class="reviews">
+
+        <div class="user">
+          <img id="img" src="richard.jpeg" alt="" />
+          <p class="name">Richard Brandson</p>
+          <p class="location">From America</p>
+          <p class="testimonial">"It’s really nice to have a platform like FAB with lots of travelers wanting to do
+            the same as you, a real beautiful cultural exchange. You can meet people so easily and in a trustful way. We
+            were four girls, from French, German and American backgrounds, without knowing each other from before. We
+            spent an amazing week together, 2000km driving, camping on the way. We saw kangaroos, koalas, penguins and
+            pelicans"</p>
+        </div>
+
+        <div class="user">
+          <img id="img" src="person2.jpeg" alt="" />
+          <p class="name">Saeed Alam</p>
+          <p class="location">From France</p>
+          <p class="testimonial">“I have found FAB to be an amazing tool for finding similar minded travel partners to
+            embark on an adventure. Through FAB, I had organized a trip to Mexico City last month and Quazi joined the
+            trip from Victoria, BC. We spent 14 days of straight exploring, hiking, eating and drinking. Quite an
+            amazing experience - all thanks to FAB!”</p>
+        </div>
+
+        <div class="user">
+          <img id="img" src="person-3.jpg" alt="" />
+          <p class="name">John Jacob</p>
+          <p class="location">From Canada</p>
+          <p class="testimonial">"I accidentally scrolled across FAB and I'm so pleased I did. I met Amaia and
+            immediately decided to road-trip together. We're spending 10 days together and it's great because we have so
+            much in common. Couldn't have done it without FAB helping us find one another! It has honestly made NZ so
+            much cheaper to explore as I get to split the costs with someone too​"</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore 2 boxes -->
+
+    <section class="explore">
+
+      <div class="box-1">
+        <p>Travelers from <br>
+          <span>190+</span> Countries <br>
+          Around the world
+        </p>
+
+        <button>Find Trips</button>
+      </div>
+      <div class="box-2">
+        <p>Started <br>
+          <span>4000+</span> Trips <br>
+          Worlwide
+        </p>
+
+        <button>Start A Trip</button>
+      </div>
+
+    </section>
+
+    <section>
+      <h2 id="why">
+        Why FAB is the Best Place for Finding a Travel Buddy
+      </h2>
+      <p id="para-2">FAB is perfect for solo travelers looking to meet like-minded travelers with similar itineraries.
+        We have a 3-step verification process which includes <br> social media, phone number, and valid government ID,
+        so you can feel safe about your potential travel partner. With users from over 190 countries, you <br> can
+        connect, chat, and find the perfect travel buddy to meet up with using FAB.
+
+      </p>
+    </section>
+
+    <section class="end-section">
+      <div>
+        <h2 class="end">TRAVEL</h2>
+        <ul>
+          <li>How it works</li>
+          <li>Find a trip</li>
+          <li>Create a trip</li>
+          <li>Refer & get iPhone</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="end">EXPLORE</h2>
+        <ul>
+          <li>Group trips by destination</li>
+          <li>Group trips by TripLeaders</li>
+          <li>All group trips</li>
+          <li>Past group trips</li>
+          <li>All categories</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="end">FAB</h2>
+        <ul>
+          <li>Blog</li>
+          <li>About us</li>
+          <li>Trustindex reviews</li>
+          <li>Press</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="end">SUPPORT</h2>
+        <ul>
+          <li>Help & FAQ</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- Logo and About Section -->
+        <div class="footer-logo-about">
+          <h2>FAB</h2>
+          <p>Your ultimate platform to find like-minded travel buddies and embark on memorable journeys together.
+            Explore. Connect. Travel.</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-navigation">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Find a Trip</a></li>
+            <li><a href="#">Create a Trip</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:support@fabtravel.com">support@fabtravel.com</a></p>
+          <p>Phone: +1 800 123 4567</p>
+          <p>Address: 123 FAB Street, Wanderlust City, WW 45678</p>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="footer-newsletter">
+          <h3>Stay Connected</h3>
+          <p>Subscribe to our newsletter for the latest travel updates and deals.</p>
+          <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2025 FAB - Find A Buddy. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+            Service</a></p>
+      </div>
+    </footer>
+
+
+  </div>
+
+  <script>
+    // Select the header and other elements to animate
+    const headerSection = document.querySelector('header');
+    const textElement = document.querySelector('.text');
+    const searchElement = document.querySelector('.search');
+    const headerP = document.querySelector('header p');
+
+
+    // Create IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add 'animate' class when the header is in view
+            headerSection.classList.add('animate');
+            textElement.classList.add('animate');
+            searchElement.classList.add('animate');
+            headerP.classList.add('animate');
+          } else {
+            // Remove 'animate' class when it goes out of view
+            headerSection.classList.remove('animate');
+            textElement.classList.remove('animate');
+            searchElement.classList.remove('animate');
+            headerP.classList.remove('animate');
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the header is visible
+      }
+    );
+
+    // Observe the header section
+    observer.observe(headerSection);
+
+    const hamburger = document.querySelector('.hamburger');
+    const submenu = document.querySelector('.submenu');
+
+    hamburger.addEventListener('click', () => {
+      submenu.classList.toggle('show');
+    });
+
+  </script>
+</body>
+
+</html>

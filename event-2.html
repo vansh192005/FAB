@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="event-2.css" />
+    <title>Post Your Event</title>
+  </head>
+  <body>
+    <header>
+      <h1>Find Your Next Travel Buddy!</h1>
+    </header>
+
+    <section class="search-section">
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Search for location or destination..."
+          onfocus="showMap()"
+          onblur="hideMap()"
+        />
+        <button>Search</button>
+      </div>
+      <div class="map-container" id="mapContainer" style="display: none">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508228!2d144.95373531531682!3d-37.816279379751576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577b2bba078d62c!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1675802075569!5m2!1sen!2sau"
+          width="100%"
+          height="300"
+          style="border: 0; border-radius: 10px"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <p>Have an event or plan to share? Let others join you!</p>
+      <a href="#" onclick="openPopup()">Post Your Event</a>
+    </section>
+
+    <section class="featured-section">
+      <h2>Featured Events & Plans</h2>
+      <div class="event-card">
+        <h3>Beach Camping Trip</h3>
+        <p>
+          Join us for a fun beach camping trip with bonfires, games, and
+          stargazing.
+        </p>
+      </div>
+      <div class="event-card">
+        <h3>Mountain Trekking Adventure</h3>
+        <p>
+          Experience the thrill of mountain trekking with a group of
+          enthusiasts!
+        </p>
+      </div>
+      <div class="event-card">
+        <h3>City Food Walk</h3>
+        <p>Explore the city's best street food and hidden culinary gems.</p>
+      </div>
+    </section>
+
+    <div class="popup" id="eventPopup">
+      <div class="popup-content">
+        <button class="close-popup" onclick="closePopup()">×</button>
+        <h2>Create New Event</h2>
+        <form id="eventForm" action="save_event-2.php" method="POST">
+          <label for="eventName">Event Name:</label>
+          <input
+            type="text"
+            id="eventName"
+            name="eventName"
+            placeholder="Enter event name"
+            required
+          />
+
+          <label for="eventDescription">Description:</label>
+          <textarea
+            id="eventDescription"
+            name="eventDescription"
+            placeholder="Enter description"
+            rows="4"
+            required
+          ></textarea>
+
+          <label for="eventDate">Date:</label>
+          <input type="date" id="eventDate" name="eventDate" required />
+
+          <label for="eventLocation">Location:</label>
+          <input
+            type="text"
+            id="eventLocation"
+            name="eventLocation"
+            placeholder="Enter location"
+            required
+          />
+
+          <button type="submit">Create Event</button>
+        </form>
+      </div>
+    </div>
+
+    <section class="user-events" id="userEvents">
+      <h2>Your Posted Events</h2>
+      <div id="eventsList"></div>
+    </section>
+
+    <script>
+      function openPopup() {
+        document.getElementById("eventPopup").style.display = "flex";
+      }
+
+      function closePopup() {
+        document.getElementById("eventPopup").style.display = "none";
+      }
+
+      function showMap() {
+        document.getElementById("mapContainer").style.display = "block";
+      }
+
+      function hideMap() {
+        document.getElementById("mapContainer").style.display = "none";
+      }
+
+      document
+        .getElementById("eventForm")
+        .addEventListener("submit", function (event) {
+          // event.preventDefault();
+
+          let eventName = document.getElementById("eventName").value;
+          let eventDescription =
+            document.getElementById("eventDescription").value;
+          let eventDate = document.getElementById("eventDate").value;
+          let eventLocation = document.getElementById("eventLocation").value;
+
+          if (eventName && eventDescription && eventDate && eventLocation) {
+            let eventCard = document.createElement("div");
+            eventCard.classList.add("event-card");
+            eventCard.innerHTML = `
+                    <h3>${eventName}</h3>
+                    <p>${eventDescription}</p>
+                    <p><strong>Date:</strong> ${eventDate}</p>
+                    <p><strong>Location:</strong> ${eventLocation}</p>
+                `;
+
+            document.getElementById("eventsList").appendChild(eventCard);
+            alert("Event created successfully!");
+            document.getElementById("eventForm").reset();
+            closePopup();
+          }
+        });
+    </script>
+  </body>
+</html>
